@@ -1,9 +1,11 @@
 import { Inter } from "next/font/google";
 import { useSession, signIn, signOut } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const router = useRouter();
   const { data: session } = useSession();
   if (!session) {
     return (
@@ -16,5 +18,5 @@ export default function Home() {
       </div>
     );
   }
-  return <div>logged in {session.user.name}</div>;
+  router.push("/home");
 }
