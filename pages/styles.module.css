@@ -1,0 +1,18 @@
+.wrapperButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.button {
+  cursor: pointer;
+  font-weight: 700;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  width: 150px;
+  height: 30px;
+}

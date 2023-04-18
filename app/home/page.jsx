@@ -1,8 +1,12 @@
-import Link from "next/link";
+import Nav from "@/component/nav";
 import React from "react";
 
 const Home = () => {
-  return <div>ss</div>;
+  return (
+    <div>
+      <Nav />
+    </div>
+  );
 };
 
 export default Home;
