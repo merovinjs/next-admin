@@ -10,6 +10,7 @@ import {
 } from "react-icons/md";
 
 import styles from "./styles.module.css";
+import "@/styles/globals.css";
 import { usePathname } from "next/navigation";
 
 const Layout = ({ children }) => {
@@ -18,7 +19,7 @@ const Layout = ({ children }) => {
   return (
     <div className={styles.body}>
       <aside className={styles.aside}>
-        <Link className={styles.linkActive} href={"/"}>
+        <Link className={styles.base} href={"/"}>
           <BiStore size={25} />
           <h1 className={styles.text}>Alışveriş Admin</h1>
         </Link>
