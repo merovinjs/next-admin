@@ -1,12 +1,9 @@
-import Nav from "@/component/nav";
+import Layout from "@/component/layout";
+
 import React from "react";
 
-const Home = () => {
-  return (
-    <div>
-      <Nav />
-    </div>
-  );
+const HomePage = () => {
+  return <Layout>home</Layout>;
 };
 
-export default Home;
+export default HomePage;
