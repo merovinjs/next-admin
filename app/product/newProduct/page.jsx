@@ -2,29 +2,26 @@
 import Layout from "@/component/layout";
 import React, { useState } from "react";
 import styles from "./styles.module.css";
+import { useRouter } from "next/navigation";
 
 const NewProduct = () => {
   const [name, setName] = useState("");
   const [desc, setDesc] = useState("");
   const [price, setPrice] = useState("");
-
+  const router = useRouter();
   const handleSubmit = async (e) => {
     e.preventDefault();
     const not = { name, desc, price };
 
-    const response = await fetch(
-      `https://next-admin-murex.vercel.app/api/product`,
-      {
-        method: "POST",
-        body: JSON.stringify(not),
-        headers: {
-          "Content-Type": "application/json",
-        },
-        cache: "no-store",
-      }
-    );
-    const json = await response.json();
-    console.log(json);
+    await fetch(`https://next-admin-murex.vercel.app/api/product`, {
+      method: "POST",
+      body: JSON.stringify(not),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      cache: "no-store",
+    });
+    router.push("/product");
   };
 
   return (
