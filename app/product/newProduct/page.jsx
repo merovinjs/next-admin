@@ -4,8 +4,7 @@ import React, { useState } from "react";
 import styles from "./styles.module.css";
 import { useRouter } from "next/navigation";
 
-const NewProduct = (e) => {
-  e.preventDefault();
+const NewProduct = () => {
   const [name, setName] = useState("");
   const [desc, setDesc] = useState("");
   const [price, setPrice] = useState("");
