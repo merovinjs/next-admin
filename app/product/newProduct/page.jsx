@@ -12,16 +12,24 @@ const NewProduct = () => {
   const handleSubmit = async () => {
     const not = { name, desc, price };
 
-    await fetch(`https://next-admin-murex.vercel.app/api/product`, {
-      method: "POST",
-      body: JSON.stringify(not),
-      headers: {
-        "Content-Type": "application/json",
-      },
-      cache: "no-store",
-    });
-    router.push("/product");
-    router.refresh("/product");
+    const response = await fetch(
+      `https://next-admin-murex.vercel.app/api/product`,
+      {
+        method: "POST",
+        body: JSON.stringify(not),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        cache: "no-store",
+      }
+    );
+    if (response.ok) {
+      router.push("/product");
+      router.refresh("/product");
+    }
+    if (!response.ok) {
+      console.log("not add product");
+    }
   };
 
   return (
