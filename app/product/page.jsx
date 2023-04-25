@@ -15,7 +15,7 @@ const Product = async () => {
   });
   const products = await data.json();
   if (products.ok) {
-    router.refresh("product");
+    router.refresh("/product");
   }
   return (
     <Layout>
