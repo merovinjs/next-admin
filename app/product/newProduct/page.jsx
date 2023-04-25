@@ -28,7 +28,7 @@ const NewProduct = (e) => {
       console.log("not add product");
     }
     if (response.ok) {
-      router.push("/product");
+      router.push("/product") && router.refresh("/product");
     }
   };
 

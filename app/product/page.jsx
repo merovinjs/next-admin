@@ -2,10 +2,8 @@ import Layout from "@/component/layout";
 import Link from "next/link";
 import styles from "./styles.module.css";
 import React from "react";
-import { useRouter } from "next/navigation";
 
 const Product = async () => {
-  const router = useRouter();
   const data = await fetch(`https://next-admin-murex.vercel.app/api/product`, {
     method: "GET",
     headers: {
@@ -14,9 +12,7 @@ const Product = async () => {
     cache: "no-store",
   });
   const products = await data.json();
-  if (products.ok) {
-    router.refresh("/product");
-  }
+
   return (
     <Layout>
       <div className={styles.container}>
