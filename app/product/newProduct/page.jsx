@@ -4,7 +4,8 @@ import React, { useState } from "react";
 import styles from "./styles.module.css";
 import { useRouter } from "next/navigation";
 
-const NewProduct = () => {
+const NewProduct = (e) => {
+  e.preventDefault();
   const [name, setName] = useState("");
   const [desc, setDesc] = useState("");
   const [price, setPrice] = useState("");
@@ -27,8 +28,7 @@ const NewProduct = () => {
       console.log("not add product");
     }
     if (response.ok) {
-      router.push("https://next-admin-murex.vercel.app/product");
-      router.refresh("https://next-admin-murex.vercel.app/product");
+      router.push("/product");
     }
   };
 
