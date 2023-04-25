@@ -23,12 +23,12 @@ const NewProduct = () => {
         cache: "no-store",
       }
     );
-    if (response.ok) {
-      router.push("/product");
-      router.refresh("/product");
-    }
     if (!response.ok) {
       console.log("not add product");
+    }
+    if (response.ok) {
+      router.push("https://next-admin-murex.vercel.app/product");
+      router.refresh("https://next-admin-murex.vercel.app/product");
     }
   };
 
