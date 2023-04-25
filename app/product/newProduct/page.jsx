@@ -21,6 +21,7 @@ const NewProduct = () => {
       cache: "no-store",
     });
     router.push("/product");
+    router.refresh("/product");
   };
 
   return (
