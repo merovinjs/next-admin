@@ -5,7 +5,11 @@ import React from "react";
 
 const Product = async () => {
   const data = await fetch(`https://next-admin-murex.vercel.app/api/product`, {
-    cache: "no-cache",
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    cache: "no-store",
   });
   const products = await data.json();
   if (data.ok) {
