@@ -9,8 +9,7 @@ const NewProduct = () => {
   const [desc, setDesc] = useState("");
   const [price, setPrice] = useState("");
   const router = useRouter();
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
     const not = { name, desc, price };
 
     await fetch(`https://next-admin-murex.vercel.app/api/product`, {
