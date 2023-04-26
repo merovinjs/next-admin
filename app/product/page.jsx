@@ -14,25 +14,23 @@ const Product = async () => {
   const products = await data.json();
 
   return (
-    <Layout>
-      <div className={styles.container}>
-        <Link className={styles.pro} href={"/product/newProduct"}>
-          Yeni ürün ekle
-        </Link>
+    <div className={styles.container}>
+      <Link className={styles.pro} href={"/product/newProduct"}>
+        Yeni ürün ekle
+      </Link>
 
-        {products.map((product) => {
-          <h2>ürünler</h2>;
-          return (
-            <div key={product._id} className={styles.details}>
-              <div className={styles.details}>
-                <h3>{product.name}</h3>
-                <button>ürün</button>
-              </div>
+      {products.map((product) => {
+        <h2>ürünler</h2>;
+        return (
+          <div key={product._id} className={styles.details}>
+            <div className={styles.details}>
+              <h3>{product.name}</h3>
+              <Link href={`/product/editProduct/${product._id}`}>düzenle</Link>
             </div>
-          );
-        })}
-      </div>
-    </Layout>
+          </div>
+        );
+      })}
+    </div>
   );
 };
 

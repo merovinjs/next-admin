@@ -1,8 +1,5 @@
-import Layout from "@/component/layout";
-import React from "react";
-
 const Setting = () => {
-  return <Layout>Setting</Layout>;
+  return <div>Setting</div>;
 };
 
 export default Setting;
