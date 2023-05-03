@@ -1,4 +1,4 @@
-import Layout from "@/component/layout";
+import { AiOutlineEdit } from "react-icons/ai";
 import Link from "next/link";
 import styles from "./styles.module.css";
 import React from "react";
@@ -14,24 +14,38 @@ const Product = async () => {
   const products = await data.json();
 
   return (
-    <div className={styles.container}>
+    <>
       <Link className={styles.pro} href={"/product/newProduct"}>
         Yeni ürün ekle
       </Link>
 
-      {products.map((product) => {
-        <h2>ürünler</h2>;
-        return (
-          <div key={product._id} className={styles.details}>
-            <div className={styles.details}>
-              <h3>{product.name}</h3>
-              <Link href={`/product/editProduct/${product._id}`}>düzenle</Link>
-            </div>
-          </div>
-        );
-      })}
-    </div>
+      <table className={styles.table}>
+        <thead className={styles.thead}>
+          <tr>
+            <td className={styles.tdhead}>yeni Ürün</td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody>
+          {products.map((product) => (
+            <tr key={product._id}>
+              <td>{product.name}</td>{" "}
+              <td>
+                <Link
+                  className={styles.edit}
+                  href={`/product/editProduct/${product._id}`}
+                >
+                  <AiOutlineEdit />
+                  Düzenle
+                </Link>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </>
   );
 };
 
 export default Product;
+//

@@ -12,6 +12,23 @@
   color: white;
   background-color: blue;
 }
-.details {
-  display: flex;
+.table {
+  width: 100%;
+}
+.table tr td {
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 0;
+  border: 1px solid rgb(231, 222, 222);
+}
+.tdhead {
+  background-color: rgb(126, 180, 224);
+}
+.edit {
+  background-color: blue;
+  color: aliceblue;
+  padding: 6px 12px;
+  border-radius: 999px;
+  display: inline-flex;
+  gap: 5px;
 }
